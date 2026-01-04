@@ -1,0 +1,60 @@
+<!--
+  story.html
+  ----------
+  Memory Atlas story page.
+
+  Purpose:
+  - Provides the base HTML shell for rendering a single story.
+  - Story ID is provided via query param: story.html?id=<storyId>
+  - JavaScript will:
+    - load story data
+    - render title/intro
+    - render the story's card grid
+    - apply nav behavior (default/minimal/none based on privacy + navType)
+
+  Notes:
+  - Designed for progressive enhancement.
+  - Later build step can pre-render story pages into /dist for AI/crawler discovery.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Story • Memory Atlas</title>
+    <meta
+      name="description"
+      content="A story in Memory Atlas."
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/states.css" />
+  </head>
+
+  <body>
+    <!-- Navigation (populated by JS depending on privacy/ui.navType) -->
+    <header id="app-nav"></header>
+
+    <main class="page" id="app-main">
+      <!-- Optional back link (rendered by JS unless privacy === 'isolated') -->
+      <div id="story-backlink"></div>
+
+      <!-- Story header (populated by JS) -->
+      <header class="page-header" id="story-header">
+        <h1 class="page-title" id="story-title">Loading…</h1>
+        <p class="page-subtitle" id="story-subtitle"></p>
+      </header>
+
+      <!-- Story intro (Markdown rendered later; kept as a simple container for v1) -->
+      <section id="story-intro" aria-label="Story introduction"></section>
+
+      <!-- Story card grid -->
+      <section class="card-grid" id="card-grid" aria-label="Story items"></section>
+    </main>
+
+    <script type="module" src="js/page-entrypoints/story.js"></script>
+  </body>
+</html>

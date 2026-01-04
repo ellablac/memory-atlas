@@ -1,0 +1,58 @@
+<!--
+  index.html
+  ----------
+  Memory Atlas landing page.
+
+  Purpose:
+  - Provides the base HTML shell for the landing experience.
+  - Loads CSS and the landing page JS entrypoint.
+  - In v1, JavaScript will populate the card grid from JSON.
+
+  Notes:
+  - This page is intentionally simple and semantic.
+  - It is designed for progressive enhancement: the page exists without JS,
+    and JS enhances it by rendering content into the grid container.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Memory Atlas</title>
+    <meta
+      name="description"
+      content="Create a world of your ideas, memories, and knowledge, one story at a time."
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/states.css" />
+  </head>
+
+  <body>
+    <!-- Navigation (populated by JS in v1) -->
+    <header id="app-nav"></header>
+
+    <!-- Main content -->
+    <main class="page" id="app-main">
+      <header class="page-header">
+        <h1 class="page-title">Memory Atlas</h1>
+        <p class="page-subtitle">
+          Create a world of your ideas, memories, and knowledge, one story at a time.
+        </p>
+      </header>
+
+      <!-- Card grid (populated by JS in v1) -->
+      <section
+        class="card-grid"
+        id="card-grid"
+        aria-label="Memory Atlas stories"
+      ></section>
+    </main>
+
+    <!-- Page JS -->
+    <script type="module" src="js/page-entrypoints/index.js"></script>
+  </body>
+</html>

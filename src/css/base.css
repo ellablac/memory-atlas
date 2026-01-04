@@ -1,0 +1,99 @@
+/*
+  base.css
+  ----------
+  Global design tokens and base element styles for Memory Atlas.
+
+  Design goals:
+  - calm, artistic, slightly magical
+  - light background
+  - subtle gradients
+  - long-form reading friendly
+*/
+
+:root {
+  /* Typography */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Georgia", "Times New Roman", serif;
+
+  --font-size-base: 16px;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+
+  /* Spacing scale */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+
+  /* Layout */
+  --max-content-width: 1200px;
+  --card-radius: 14px;
+
+  /* Color palette (soft, neutral) */
+  --color-bg: #faf9f7;
+  --color-fg: #1f1f1f;
+  --color-muted: #6f6f6f;
+
+  /* Gradient atmosphere */
+  --gradient-page:
+    radial-gradient(
+      1200px 800px at 20% -10%,
+      rgba(240, 228, 255, 0.45),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 600px at 90% 10%,
+      rgba(220, 240, 255, 0.35),
+      transparent 55%
+    );
+
+  /* Card overlay */
+  --overlay-bg: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.0)
+  );
+
+  /* Motion */
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 160ms var(--ease-soft);
+  --transition-medium: 280ms var(--ease-soft);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+  background-image: var(--gradient-page);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0 0 var(--space-md);
+}

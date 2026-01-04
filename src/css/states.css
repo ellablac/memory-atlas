@@ -1,0 +1,29 @@
+/*
+  states.css
+  -----------
+  Interaction states: hover, focus, active.
+*/
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.08),
+    0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover::after,
+.card.is-active::after {
+  opacity: 1;
+}
+
+.card:hover .card-title,
+.card.is-active .card-title {
+  text-decoration: underline;
+}
+
+/* Accessible focus */
+.card:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+  outline-offset: 2px;
+}

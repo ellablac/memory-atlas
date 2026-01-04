@@ -1,0 +1,91 @@
+/*
+  components.css
+  ----------------
+  Reusable UI components: cards, overlays, nav.
+*/
+
+/* ---------- Card ---------- */
+
+.card {
+  position: relative;
+  display: block;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background-color: #ddd;
+  transition: transform var(--transition-medium),
+              box-shadow var(--transition-medium);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-bg);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-md);
+  color: white;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.card-subtitle {
+  font-size: var(--font-size-sm);
+  opacity: 0.85;
+  margin-top: var(--space-2xs);
+}
+
+/* ---------- Navigation ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(250, 249, 247, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.nav--default {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav--minimal {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-title {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.nav-actions {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.nav-button {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+}

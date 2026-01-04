@@ -53,8 +53,7 @@ memory-atlas/
 │   ├── photos.html
 │   ├── data/                    # Authoring data (source of truth)
 │   │   ├── site.json
-│   │   ├── stories.json
-│   │   └── cards.json
+│   │   └── stories.json
 │   ├── assets/                  # Static assets (copied to dist)
 │   │   ├── images/
 │   │   └── fonts/               

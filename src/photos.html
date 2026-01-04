@@ -1,0 +1,48 @@
+<!--
+  photos.html
+  ----------
+  Memory Atlas photo aggregation page.
+
+  Purpose:
+  - Renders a grid of media cards aggregated either:
+    - globally, or
+    - scoped to a story tree via query param: photos.html?story=<storyId>
+  - JavaScript will load data and populate the grid.
+
+  Notes:
+  - In v1, this page remains a normal card grid (consistent UI).
+  - Global aggregation should exclude privacy=private and privacy=isolated by default.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Photos • Memory Atlas</title>
+    <meta
+      name="description"
+      content="Browse photos and media in Memory Atlas."
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/states.css" />
+  </head>
+
+  <body>
+    <header id="app-nav"></header>
+
+    <main class="page" id="app-main">
+      <header class="page-header">
+        <h1 class="page-title" id="photos-title">All Photos</h1>
+        <p class="page-subtitle" id="photos-subtitle"></p>
+      </header>
+
+      <section class="card-grid" id="card-grid" aria-label="Photos"></section>
+    </main>
+
+    <script type="module" src="js/page-entrypoints/photos.js"></script>
+  </body>
+</html>

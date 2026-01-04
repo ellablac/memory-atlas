@@ -1,0 +1,61 @@
+{
+  "malta-2025": {
+    "id": "malta-2025",
+    "title": "Malta Trip",
+    "subtitle": "2025",
+    "privacy": "public",
+    "cardType": "jonas",
+    "storyType": "story",
+    "cardCover": "assets/images/danil-fun-day-cover.jpg",
+    "image": "assets/images/danil-fun-day-cover.jpg",
+    "parentStoryId": null,
+    "introMarkdown": "Highlights from my trip to Malta in October 2025.",
+    "ui": { "navType": "default" },
+    "storyIds": ["danil-fun-day"]
+  },
+
+  "danil-fun-day": {
+    "id": "danil-fun-day",
+    "title": "Danil’s Fun Day",
+    "subtitle": null,
+    "privacy": "public",
+    "cardType": "jonas",
+    "storyType": "story",
+    "cardCover": "assets/images/danil-fun-day-cover.jpg",
+    "image": "assets/images/danil-fun-day-cover.jpg",
+    "parentStoryId": "malta-2025",
+    "introMarkdown": null,
+    "ui": { "navType": "default" },
+    "storyIds": ["malta-aquarium"]
+  },
+
+  "malta-aquarium": {
+    "id": "malta-aquarium",
+    "title": "Malta National Aquarium",
+    "subtitle": "photography by Danil Smirnov",
+    "privacy": "isolated",
+    "cardType": "jonas",
+    "storyType": "story",
+    "cardCover": "assets/images/danil-fun-day-cover.jpg",
+    "image": "assets/images/danil-fun-day-cover.jpg",
+    "parentStoryId": "danil-fun-day",
+    "introMarkdown": null,
+    "ui": { "navType": "default" },
+    "storyIds": []
+  },
+
+  "costa-rica-trip": {
+    "id": "costa-rica-trip",
+    "title": "Costa Rica Trip",
+    "subtitle": "Coming soon",
+    "privacy": "public",
+    "cardType": "jonas",
+    "storyType": "story",
+    "cardCover": "",
+    "image": "",
+    "parentStoryId": null,
+    "introMarkdown": "Coming soon.",
+    "ui": { "navType": "default" },
+    "storyIds": []
+  }
+}

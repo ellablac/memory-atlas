@@ -1,0 +1,33 @@
+/*
+  layout.css
+  ------------
+  Page-level layout and grid systems.
+*/
+
+.page {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+}
+
+.page-header {
+  margin-bottom: var(--space-xl);
+}
+
+.page-title {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+}
+
+.page-subtitle {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
