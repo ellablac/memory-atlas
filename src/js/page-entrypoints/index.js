@@ -11,6 +11,8 @@
 
 import { loadAllData } from "../data-loader.js";
 import { renderCardGrid } from "../grid-renderer.js";
+import { initCardFlip } from "../components/card-flip.js";
+
 
 /**
  * Initialize the landing page.
@@ -37,6 +39,7 @@ async function init() {
     .filter(Boolean);
 
   renderCardGrid(grid, landingStories);
+  initCardFlip(grid);
 }
 
 init();

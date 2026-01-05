@@ -16,6 +16,7 @@
 
 import { loadAllData } from "../data-loader.js";
 import { renderCardGrid } from "../grid-renderer.js";
+import { initCardFlip } from "../components/card-flip.js";
 
 /**
  * Get the story ID from the current URL.
@@ -75,6 +76,7 @@ async function init() {
       .filter(Boolean);
 
     renderCardGrid(grid, childStories);
+    initCardFlip(grid);
   }
 }
 

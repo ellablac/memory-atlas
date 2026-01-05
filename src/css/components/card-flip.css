@@ -1,0 +1,55 @@
+/*
+  card-flip.css
+  -------------
+  Optional flip interaction for cards.
+
+  This file defines ONLY the flip behavior.
+  Cards without `.card--flip` are unaffected.
+*/
+
+/* Enable 3D context only for flippable cards */
+.card--flip {
+  perspective: 1100px;
+}
+
+/* Inner wrapper required for flipping */
+.card--flip .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform var(--transition-slow);
+}
+
+/* Shared face rules */
+.card--flip .card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+/* Back face */
+.card--flip .card-back {
+  transform: rotateY(180deg);
+  background: rgba(10, 10, 12, 0.92);
+  color: rgba(255, 255, 255, 0.92);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}
+
+/* Desktop hover flip */
+@media (hover: hover) and (pointer: fine) {
+  .card--flip:hover .card-inner,
+  .card--flip:focus-within .card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Mobile flip (JS toggles this class) */
+.card--flip.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+

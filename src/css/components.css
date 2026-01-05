@@ -9,6 +9,7 @@
 .card {
   position: relative;
   display: block;
+  aspect-ratio: 3 / 4; /* this keeps the card grid from collapsing when all cards have flip backs */
   border-radius: var(--card-radius);
   overflow: hidden;
   background-color: #ddd;

@@ -10,19 +10,29 @@
  * @returns {HTMLElement}
  */
 function createCardElement(story) {
-  const link = document.createElement("a");
-  link.className = "card";
-  link.href = `story.html?id=${story.id}`;
+
+  const card = document.createElement("article");
+  card.className = "card";
+  if (story.storyType === "story") {
+    card.classList.add("card--flip");
+}
+  const inner = document.createElement("div");
+  inner.className = "card-inner";
+
+  const frontLink = document.createElement("a");
+  frontLink.className = "card-face card-front";
+  frontLink.href = `story.html?id=${story.id}`;
 
   const img = document.createElement("img");
   const storyId = story.id;
 
-  img.src = story.cardCover || `assets/images/${storyId}-cover.jpg`;
-
-  // Fallback if image does not exist
+    // Fallback if image does not exist
   img.onerror = () => {
-    img.src = "assets/images/default_card_cover.png";
+    img.onerror = null; // stop looping
+    img.src = "assets/images/default_card_cover.jpg";
   };
+
+  img.src = story.cardCover || `assets/images/${storyId}-cover.jpg`;
 
   img.alt = story.title || "";
 
@@ -40,11 +50,13 @@ function createCardElement(story) {
     subtitle.textContent = story.subtitle;
     overlay.appendChild(subtitle);
   }
+  frontLink.appendChild(img);
+  frontLink.appendChild(overlay);
 
-  link.appendChild(img);
-  link.appendChild(overlay);
+  inner.appendChild(frontLink);
+  card.appendChild(inner);
 
-  return link;
+  return card;
 }
 
 /**

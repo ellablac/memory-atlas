@@ -6,28 +6,43 @@
 
 .page {
   max-width: var(--max-content-width);
-  margin: 0 auto;
-  padding: var(--space-xl) var(--space-lg);
+  margin-inline: auto; /* centers horizontally */
+  padding-inline: var(--space-lg);
 }
 
+
 .page-header {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-l);
+  text-align: center;
 }
 
 .page-title {
-  font-size: var(--font-size-xl);
   font-weight: 500;
   margin-bottom: var(--space-sm);
 }
 
-.page-subtitle {
-  color: var(--color-muted);
-  font-size: var(--font-size-sm);
+h1 {
+  font-size: clamp(1.8rem, 4vw, 3.6rem);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 1vw, 2rem);
+}
+
+.page-subtitle,
+.card-subtitle,
+#story-subtitle {
+  opacity: 0.6;
 }
 
 /* Card grid */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: var(--space-md);
+  justify-content: center;
+}
+#story-intro {
+  text-align: center;
 }
