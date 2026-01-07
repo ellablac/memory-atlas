@@ -43,10 +43,19 @@
       <!-- Optional back link (rendered by JS unless privacy === 'isolated') -->
       <div id="story-backlink"></div>
 
+      <div class = "story-hero">
+        <img id="hero-image"></img>
+      </div>
+
       <!-- Story header (populated by JS) -->
       <header class="page-header" id="story-header">
-        <h1 class="page-title" id="story-title">Loading…</h1>
-        <h2 class="page-subtitle" id="story-subtitle"></h2>
+        <div class="page-header-decorations"></div>
+
+        <!-- Story header (populated by JS) -->
+        <div class="page-header-content">
+          <h1 class="page-title" id="story-title">Loading…</h1>
+          <h2 class="page-subtitle" id="story-subtitle"></h2>
+        </div>
       </header>
 
       <!-- Story intro (Markdown rendered later; kept as a simple container for v1) -->

@@ -76,6 +76,8 @@
 
 html {
   font-size: var(--font-size-base);
+  height: 100%;
+
 }
 
 body {
@@ -86,8 +88,9 @@ body {
   background-color: var(--color-bg);
   background-image: var(--gradient-page);
   line-height: 1.6;
+  height: 100%;
+  min-height: 100vh;
 }
-
 nav,
 button,
 .card-explore {
@@ -109,3 +112,45 @@ p {
   margin: 0 0 var(--space-md);
 }
 
+/* ---------- Story hero ---------- */
+.story-hero {
+  width: 100%;
+  margin-bottom: var(--space-sm);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+.story-hero img {
+  display: block;
+  width: 100%;
+  max-height: 25vh; /* ~1/4 of viewport height */
+  object-fit: cover;
+}
+
+/* Shared backing for readable text over images */
+.text-backdrop {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+}
+
+.page-header-content {
+  margin: 0.2em 0;
+  padding: 0.35em 0.75em;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(1px);
+  border-radius: 999px; /* pill-like, soft */
+}
+
+/* Intro block (slightly wider, calmer) */
+#story-intro {
+  margin: var(--space-lg) auto;
+  max-width: 65ch;
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(1px);
+  border-radius: 18px;
+  text-align: center;
+}

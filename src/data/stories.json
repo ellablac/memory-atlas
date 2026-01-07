@@ -2,14 +2,31 @@
   "malta-2025": {
     "id": "malta-2025",
     "title": "Malta Trip",
-    "subtitle": "2025",
+    "subtitle": "October 2025",
     "privacy": "public",
     "cardType": "jonas",
     "storyType": "story",
+    "background": {
+      "type": "image",
+      "value": "assets/images/malta-valletta-grand-harbor.webp"
+    },
+    "hero": {
+      "src": "assets/images/gozo-panoramic.jpg"
+    },
     "cardCover": "assets/images/danil-fun-day-cover.jpg",
     "image": "assets/images/danil-fun-day-cover.jpg",
+    "headerDecorations": [
+    {
+      "src": "assets/images/malta-left.png",
+      "position": "left"
+    },
+    {
+      "src": "assets/images/malta-right.png",
+      "position": "right"
+    }
+    ],
     "parentStoryId": null,
-    "introMarkdown": "Highlights from my trip to Malta in October 2025.",
+    "introMarkdown": "Highlights of my trip to Malta and Gozo.",
     "ui": { "navType": "default" },
     "storyIds": ["danil-fun-day"]
   },
@@ -21,6 +38,10 @@
     "privacy": "public",
     "cardType": "jonas",
     "storyType": "story",
+    "background": {
+      "type": "gradient",
+      "value": "radial-gradient(1200px circle at 20% 10%, rgba(120,170,255,0.35), transparent 55%), linear-gradient(180deg, rgba(255,245,235,0.9), rgba(245,250,255,0.9))"
+    },
     "cardCover": "assets/images/danil-fun-day-cover.jpg",
     "image": "assets/images/danil-fun-day-cover.jpg",
     "parentStoryId": "malta-2025",
@@ -35,7 +56,7 @@
     "subtitle": "photography by Danil Smirnov",
     "privacy": "isolated",
     "cardType": "jonas",
-    "storyType": "image",
+    "storyType": "story",
     "cardCover": "assets/images/danil-fun-day-cover.jpg",
     "image": "assets/images/danil-fun-day-cover.jpg",
     "parentStoryId": "danil-fun-day",

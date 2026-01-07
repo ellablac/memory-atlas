@@ -10,12 +10,6 @@
   padding-inline: var(--space-lg);
 }
 
-
-.page-header {
-  margin-bottom: var(--space-l);
-  text-align: center;
-}
-
 .page-title {
   font-weight: 500;
   margin-bottom: var(--space-sm);
@@ -45,4 +39,105 @@ h2 {
 }
 #story-intro {
   text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+/* ---------- Header container ---------- */
+
+.page-header {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin-bottom: var(--space-l);
+}
+
+/* ---------- Header content ---------- */
+
+.page-header-content {
+  text-align: center;
+  z-index: 2;
+}
+
+/* ---------- Decorations layer ---------- */
+
+.page-header-decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* purely decorative */
+}
+
+/* Base decoration */
+.header-decoration {
+  position: absolute;
+  max-height: 140px;
+  width: auto;
+  opacity: 0.95;
+}
+
+/* Positions (v1) */
+.header-decoration--left {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-decoration--right {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Mobile: hide decorations by default */
+@media (max-width: 700px) {
+  .header-decoration {
+    display: none;
+  }
+}
+
+/******************************************************************/
+/* Atmospheric background mode: full-viewport overlay + noise     */
+/******************************************************************/
+/* applies an overlay to improve readability over busy backgrounds*/
+/* applies noice to add texture and reduce banding                */
+/******************************************************************/
+body.atmospheric {
+  /* body holds the story background (color/gradient/image) */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Readability overlay (full viewport) */
+body.atmospheric::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Noise layer to reduce gradient banding (full viewport) */
+/* body.atmospheric::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image: url("../assets/images/noise-warm.png");
+  background-repeat: repeat;
+
+  opacity: 0.08; /* increased a bit to fight banding */
+  /* If this causes odd results on your browser, remove the next line */
+  /* mix-blend-mode: soft-light;
+} */ 
+
+/* Make sure page content sits above overlay/noise */
+body.atmospheric .page,
+body.atmospheric main,
+body.atmospheric article {
+  position: relative;
+  z-index: 1;
 }
